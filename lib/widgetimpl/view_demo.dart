@@ -4,7 +4,76 @@ import '../model/post.dart';
 class ViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewPageWidget2();
+    return GridViewBuildWidget();
+  }
+}
+
+class GridViewBuildWidget extends StatelessWidget {
+
+  Widget _buildItem(BuildContext context , int count) {
+      return Container(
+        color: Colors.grey,
+        alignment: AlignmentDirectional.center,
+        child: Text("item $count",style: TextStyle(color: Colors.black),),
+      );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            crossAxisSpacing: 5,
+            mainAxisSpacing: 5),
+        itemBuilder: _buildItem);
+  }
+}
+
+class GridViewExtentWidget extends StatelessWidget {
+  List<Widget> _buildItem(int count) {
+    return List.generate(count, (index) {
+      return Container(
+        color: Colors.grey,
+        alignment: AlignmentDirectional.center,
+        child: Text("item $index",style: TextStyle(color: Colors.black),),
+      );
+    });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.extent(
+      maxCrossAxisExtent: 100,
+      crossAxisSpacing: 5,
+      mainAxisSpacing: 5,
+      //scrollDirection: Axis.horizontal,
+      children: _buildItem(40),
+    );
+  }
+}
+
+
+class GridViewCountWidget extends StatelessWidget {
+  List<Widget> _buildItem(int count) {
+    return List.generate(count, (index) {
+      return Container(
+        color: Colors.grey,
+        alignment: AlignmentDirectional.center,
+        child: Text("item $index",style: TextStyle(color: Colors.black),),
+      );
+    });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisCount: 3,
+      crossAxisSpacing: 5,
+      mainAxisSpacing: 5,
+      children: _buildItem(40),
+    );
   }
 }
 
@@ -18,10 +87,19 @@ class ViewPageWidget2 extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        Positioned(bottom: 10,left: 10,
-            child:Text(employeesList[index].nme),),
-        Positioned(bottom: 10,left: 60,
-            child:  Text(employeesList[index].gender,textAlign: TextAlign.left,),)
+        Positioned(
+          bottom: 10,
+          left: 10,
+          child: Text(employeesList[index].nme),
+        ),
+        Positioned(
+          bottom: 10,
+          left: 60,
+          child: Text(
+            employeesList[index].gender,
+            textAlign: TextAlign.left,
+          ),
+        )
       ],
     );
   }
