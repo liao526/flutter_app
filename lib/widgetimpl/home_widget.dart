@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/widgetimpl/listView_widget.dart';
 import 'package:flutter_app/widgetimpl/drawer_widget.dart';
 import 'package:flutter_app/widgetimpl/navigation_bar_widget.dart';
+import 'package:flutter_app/widgetimpl/basic_demo.dart';
 
 class HomeWidget extends StatelessWidget {
   @override
@@ -44,6 +45,7 @@ class HomeWidget extends StatelessWidget {
           ),
           body: TabBarView(children: [
             ListWidget(),
+            BasicWidget(),
 //            Tab(
 //              icon: Icon(
 //                Icons.laptop_chromebook,
@@ -51,10 +53,10 @@ class HomeWidget extends StatelessWidget {
 //                color: Colors.black12,
 //              ),
 //            ),
-            Tab(
-              icon: Icon(Icons.lightbulb_outline,
-                  size: 100, color: Colors.black12),
-            ),
+//            Tab(
+//              icon: Icon(Icons.lightbulb_outline,
+//                  size: 100, color: Colors.black12),
+//            ),
             Tab(
               icon: Icon(Icons.live_help, size: 100, color: Colors.black12),
             )
