@@ -4,13 +4,14 @@ import 'package:flutter_app/widgetimpl/drawer_widget.dart';
 import 'package:flutter_app/widgetimpl/navigation_bar_widget.dart';
 import 'package:flutter_app/widgetimpl/basic_demo.dart';
 import 'package:flutter_app/widgetimpl/layout_demo.dart';
+import 'package:flutter_app/widgetimpl/view_demo.dart';
 
 class HomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             //leading: IconButton(icon: Icon(Icons.menu), onPressed: ()=>debugPrint("mune on click")),
@@ -41,13 +42,17 @@ class HomeWidget extends StatelessWidget {
                   ),
                   Tab(
                     icon: Icon(Icons.live_help),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.view_agenda),
                   )
                 ]),
           ),
           body: TabBarView(children: [
             ListWidget(),
             BasicWidget(),
-            LayoutWidget()
+            LayoutWidget(),
+            ViewWidget()
 //            Tab(
 //              icon: Icon(
 //                Icons.laptop_chromebook,
