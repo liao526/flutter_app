@@ -29,10 +29,10 @@ class MaterialWidget extends StatelessWidget {
         "/mdc":(context)=>MaterialComponents()
       },
       theme: ThemeData(
-        accentColor: Colors.deepOrange,
           primarySwatch: Colors.yellow,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-          splashColor: Colors.black),
+          splashColor: Colors.white70,
+          accentColor:  Color.fromRGBO(3, 54, 255, 1.0),),
     );
   }
 }

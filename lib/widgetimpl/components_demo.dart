@@ -21,41 +21,85 @@ class MaterialComponents extends StatelessWidget {
 class BottomDemo1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _rom = Column(
+    final _outLineButton = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Theme(
+          data: Theme.of(context).copyWith(
+              buttonColor: Theme.of(context).accentColor,
+              buttonTheme: ButtonThemeData(
+                  textTheme: ButtonTextTheme.primary, shape: StadiumBorder())),
+          child: OutlineButton(
+            onPressed: () {},
+            child: Text(
+              "OutLineButton",
+            ),
+            splashColor: Colors.grey[100],
+            borderSide: BorderSide(color: Colors.black),
+            textColor: Colors.black,
+            highlightedBorderColor: Colors.grey,
+          ),
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        OutlineButton.icon(
+          onPressed: () {},
+          icon: Icon(Icons.radio_button_checked),
+          label: Text("OutLineButton"),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+        )
+      ],
+    );
+
+    final _raisedButton = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        RaisedButton(
+          onPressed: () {},
+          shape: BeveledRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(3))),
+          child: Text(
+            "RaisedButton",
+            style: TextStyle(color: Theme.of(context).accentColor),
+          ),
+          splashColor: Colors.yellow,
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        RaisedButton.icon(
+          onPressed: () {},
+          icon: Icon(Icons.radio_button_checked),
+          label: Text("RaisedButton"),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+        )
+      ],
+    );
+
+    final _flatButton = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         FlatButton(
-          onPressed: (){
-            debugPrint("flatButton on clikc");
-          },
-          child: Text("Button",style: TextStyle(color: Theme.of(context).accentColor),),
+          onPressed: () {},
+          child: Text(
+            "FlatButton",
+            style: TextStyle(color: Theme.of(context).accentColor),
+          ),
           splashColor: Colors.yellow,
         ),
-        SizedBox(width: 10,),
-        FlatButton.icon(onPressed: () {
-          debugPrint("FlatButton.icon on clikc");
-        },
-            icon: Icon(Icons.radio_button_checked),
-            label: Text("Button"),
-        splashColor: Colors.grey,textColor: Theme.of(context).accentColor,),
-
-
-        RaisedButton(
-          onPressed: (){
-            debugPrint("flatButton on clikc");
-          },
-          shape: BeveledRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(3))),
-          child: Text("Button",style: TextStyle(color: Theme.of(context).accentColor),),
-          splashColor: Colors.yellow,
+        SizedBox(
+          width: 10,
         ),
-        SizedBox(width: 10,),
-        RaisedButton.icon(onPressed: () {
-          debugPrint("FlatButton.icon on clikc");
-        },
+        FlatButton.icon(
+          onPressed: () {},
           icon: Icon(Icons.radio_button_checked),
-          label: Text("Button"),
-          splashColor: Colors.grey,textColor: Theme.of(context).accentColor,)
-
+          label: Text("FlatButton"),
+          splashColor: Colors.grey,
+          textColor: Theme.of(context).accentColor,
+        ),
       ],
     );
 
@@ -68,9 +112,7 @@ class BottomDemo1 extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _rom
-          ],
+          children: <Widget>[_flatButton, _raisedButton, _outLineButton],
         ),
       ),
     );
