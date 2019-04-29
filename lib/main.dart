@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/widgetimpl/home_widget.dart';
 import 'package:flutter_app/widgetimpl/routes_demo.dart';
 import 'package:flutter_app/widgetimpl/froms_demo.dart';
+import 'package:flutter_app/widgetimpl/components_demo.dart';
 
 
 void main() => runApp(MainWidget());
@@ -20,12 +21,12 @@ class MaterialWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: NavigationDemo(),
-      initialRoute:"/from",
+      initialRoute:"/mdc",
       routes: {
         "/":(context)=>HomeWidget(),
         "/about":(context)=> Page("About"),
         "/from":(context)=> FromView(),
-
+        "/mdc":(context)=>MaterialComponents()
       },
       theme: ThemeData(
         accentColor: Colors.deepOrange,
