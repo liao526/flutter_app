@@ -22,6 +22,44 @@ class BottomDemo1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final _ButtonBar = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Theme(
+          data: Theme.of(context).copyWith(
+              buttonColor: Theme.of(context).accentColor,
+              buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary,padding: EdgeInsets.all(10),
+                  shape: BeveledRectangleBorder()),),
+          child: ButtonBar(
+            children: <Widget>[
+              OutlineButton(
+                onPressed: () {},
+                child: Text(
+                  "OutLineButton",
+                ),
+                splashColor: Colors.grey[100],
+                borderSide: BorderSide(color: Colors.black),
+                textColor: Colors.black,
+                highlightedBorderColor: Colors.grey,
+              ),
+              OutlineButton(
+                onPressed: () {},
+                child: Text(
+                  "OutLineButton",
+                ),
+                splashColor: Colors.grey[100],
+                borderSide: BorderSide(color: Colors.black),
+                textColor: Colors.black,
+                highlightedBorderColor: Colors.grey,
+              ),
+            ],
+          )
+        ),
+
+      ],
+    );
+
+
     final _fixedButton = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -129,7 +167,11 @@ class BottomDemo1 extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[_flatButton, _raisedButton, _outLineButton,_fixedButton],
+          children: <Widget>[_flatButton,
+          _raisedButton,
+          _outLineButton,
+          _fixedButton,
+          _ButtonBar],
         ),
       ),
     );
