@@ -21,7 +21,7 @@ class MaterialComponents extends StatelessWidget {
 class BottomDemo1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _rom = Row(
+    final _rom = Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         FlatButton(
@@ -31,12 +31,30 @@ class BottomDemo1 extends StatelessWidget {
           child: Text("Button",style: TextStyle(color: Theme.of(context).accentColor),),
           splashColor: Colors.yellow,
         ),
+        SizedBox(width: 10,),
         FlatButton.icon(onPressed: () {
           debugPrint("FlatButton.icon on clikc");
         },
             icon: Icon(Icons.radio_button_checked),
             label: Text("Button"),
-        splashColor: Colors.grey,textColor: Theme.of(context).accentColor,)
+        splashColor: Colors.grey,textColor: Theme.of(context).accentColor,),
+
+
+        RaisedButton(
+          onPressed: (){
+            debugPrint("flatButton on clikc");
+          },
+          shape: BeveledRectangleBorder(borderRadius:BorderRadius.all(Radius.circular(3))),
+          child: Text("Button",style: TextStyle(color: Theme.of(context).accentColor),),
+          splashColor: Colors.yellow,
+        ),
+        SizedBox(width: 10,),
+        RaisedButton.icon(onPressed: () {
+          debugPrint("FlatButton.icon on clikc");
+        },
+          icon: Icon(Icons.radio_button_checked),
+          label: Text("Button"),
+          splashColor: Colors.grey,textColor: Theme.of(context).accentColor,)
 
       ],
     );
