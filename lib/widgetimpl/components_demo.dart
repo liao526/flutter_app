@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/widgetimpl/froms_demo.dart';
+import 'package:flutter_app/widgetimpl/checkbox_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -12,6 +14,8 @@ class MaterialComponents extends StatelessWidget {
         children: <Widget>[
           ListItemWidget(title: "FloatingBottom", page: FloatingBottomDemo()),
           ListItemWidget(title: "BottomDemo1", page: BottomDemo1()),
+          ListItemWidget(title: "From", page: FromView()),
+          ListItemWidget(title: "Checkbox", page: CheckboxDemo()),
         ],
       ),
     );
